@@ -65,7 +65,8 @@
 #     +                                            Payload                                            +
 #     |                                                                                               |
 #     +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-ethernet="Destination Address:48,Source Address:48,EtherType:16,Payload:128?bits=48"
+arp="Hardware Type:16,Protocol Type:16, Hardware Address Length:8,Protocol Address Length:8,Operation:16,Sender Hardware Address:48,Sender Protocol Address:32,Target Hardware Address:48,Target Protocol Address:32?bits=16"
+ethernet="Destination Address:48,Source Address:48,EtherType:16,Payload:96,CRC:32?bits=48"
 
 
 #     +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
@@ -724,7 +725,8 @@ Field_124:124,Field_127:127"
 
 
 # Dictionary of specs
-protocols={"ethernet":ethernet,
+protocols={"arp":arp,
+			"ethernet":ethernet,
            "8021q":dot1q,
            "dot1q":dot1q,
            "tcp":tcp,
